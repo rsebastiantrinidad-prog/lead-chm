@@ -45,11 +45,9 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
   const methods = useForm<DiagnosticFormData>({
     resolver: zodResolver(diagnosticSchema),
     defaultValues: {
-      equipo_puntaje_objetivos: 5,
-      equipo_puntaje_coordinacion: 5,
-      equipo_puntaje_responsabilidad: 5,
-      equipo_puntaje_comunicacion: 5,
-      equipo_puntaje_resolucion: 5,
+      likert_coordinacion_fluida: 3,
+      likert_fricciones_areas: 3,
+      likert_decisiones_escalan: 3,
     },
     mode: "onChange",
   });
