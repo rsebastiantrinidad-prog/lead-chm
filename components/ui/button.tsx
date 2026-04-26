@@ -12,12 +12,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-300 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F2A900] focus-visible:ring-offset-2 focus-visible:ring-offset-[#00205B] disabled:pointer-events-none disabled:opacity-50 h-12 px-6 py-2",
           {
-            "bg-zinc-50 text-zinc-900 hover:bg-zinc-200 shadow-sm": variant === "default",
-            "border border-zinc-800 bg-transparent shadow-sm hover:bg-zinc-800 hover:text-zinc-50": variant === "outline",
-            "hover:bg-zinc-800 hover:text-zinc-50": variant === "ghost",
-            "bg-zinc-800 text-zinc-50 hover:bg-zinc-700": variant === "secondary",
+            "bg-[#F2A900] text-[#00205B] hover:bg-[#E09D00] shadow-md hover:scale-[1.02] active:scale-95": variant === "default",
+            "border border-[#F2A900] text-[#F2A900] bg-transparent shadow-sm hover:bg-[#F2A900] hover:text-[#00205B]": variant === "outline",
+            "hover:bg-white/10 hover:text-white": variant === "ghost",
+            "bg-white/10 text-white hover:bg-white/20": variant === "secondary",
           },
           className
         )}

@@ -27,7 +27,11 @@ const steps = [
   { id: "closing", title: "Cierre", component: ClosingStep },
 ];
 
-export function DiagnosticWizard() {
+interface DiagnosticWizardProps {
+  onStepChange?: (stepIndex: number) => void;
+}
+
+export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
   const [currentStep, setCurrentStep] = React.useState(0);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
@@ -48,7 +52,7 @@ export function DiagnosticWizard() {
   const { handleSubmit, trigger } = methods;
 
   const nextStep = async () => {
-    // Definimos qué campos validar por paso (idealmente esto se configura por paso)
+    // Definimos qué campos validar por paso
     let fieldsToValidate: any[] = [];
     if (currentStep === 0) {
       fieldsToValidate = ["nombre_apellido", "rol", "area"];
@@ -63,7 +67,9 @@ export function DiagnosticWizard() {
 
       if (result.success && result.id) {
         setRecordId(result.id);
-        setCurrentStep((prev) => prev + 1);
+        const next = currentStep + 1;
+        setCurrentStep(next);
+        if (onStepChange) onStepChange(next);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         alert(result.error || "Hubo un error al guardar el progreso.");
@@ -73,7 +79,9 @@ export function DiagnosticWizard() {
 
   const prevStep = () => {
     if (currentStep > 0) {
-      setCurrentStep((prev) => prev - 1);
+      const prev = currentStep - 1;
+      setCurrentStep(prev);
+      if (onStepChange) onStepChange(prev);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -92,12 +100,12 @@ export function DiagnosticWizard() {
 
   if (isSuccess) {
     return (
-      <Card className="w-full max-w-2xl mx-auto p-8 text-center mt-12">
-        <h2 className="text-2xl font-bold mb-4 text-zinc-100">¡Diagnóstico Completado!</h2>
-        <p className="text-zinc-400 mb-8">
+      <Card className="w-full max-w-2xl mx-auto p-8 text-center mt-12 bg-white/5 border border-white/20 shadow-xl backdrop-blur-md">
+        <h2 className="text-2xl font-bold mb-4 text-[#F2A900]">¡Diagnóstico Completado!</h2>
+        <p className="text-white/80 mb-8">
           Las respuestas han sido registradas exitosamente. El equipo analizará los resultados.
         </p>
-        <Button onClick={() => window.location.reload()}>Iniciar nuevo diagnóstico</Button>
+        <Button onClick={() => window.location.reload()} className="w-full">Iniciar nuevo diagnóstico</Button>
       </Card>
     );
   }
@@ -108,28 +116,28 @@ export function DiagnosticWizard() {
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-3xl mx-auto">
         <div className="mb-8">
-          <div className="flex justify-between text-xs text-zinc-500 mb-2 font-mono uppercase tracking-wider">
+          <div className="flex justify-between text-xs text-[#F2A900] mb-2 font-mono uppercase tracking-wider">
             <span>Paso {currentStep + 1} de {steps.length}</span>
             <span>{steps[currentStep].title}</span>
           </div>
-          <div className="w-full bg-zinc-900 h-1 rounded-full overflow-hidden">
+          <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
             <div 
-              className="bg-zinc-100 h-full transition-all duration-300 ease-in-out"
+              className="bg-[#F2A900] h-full transition-all duration-300 ease-in-out"
               style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
             />
           </div>
         </div>
 
-        <Card className="overflow-hidden border-zinc-800/60 bg-zinc-950/40">
-          <CardContent className="p-0">
+        <Card className="overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-xl rounded-2xl">
+          <CardContent className="p-0 max-h-[55vh] md:max-h-[65vh] overflow-y-auto custom-scrollbar relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}
-                initial={{ opacity: 0, x: 10 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.2 }}
-                className="p-6 sm:p-8"
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="p-6 sm:p-10"
               >
                 <CurrentStepComponent />
               </motion.div>
@@ -137,16 +145,17 @@ export function DiagnosticWizard() {
           </CardContent>
         </Card>
 
-        <div className="flex justify-between mt-8">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={prevStep}
-            disabled={currentStep === 0 || isSubmitting}
-            className={currentStep === 0 ? "opacity-0 pointer-events-none" : ""}
-          >
-            Atrás
-          </Button>
+        <div className={`flex mt-8 ${currentStep === 0 ? "justify-end" : "justify-between"}`}>
+          {currentStep > 0 && (
+            <Button
+              type="button"
+              variant="outline"
+              onClick={prevStep}
+              disabled={isSubmitting}
+            >
+              Atrás
+            </Button>
+          )}
 
           {currentStep === steps.length - 1 ? (
             <Button type="submit" disabled={isSubmitting}>

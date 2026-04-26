@@ -11,13 +11,13 @@ const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
         <input
           type="range"
           className={cn(
-            "w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-zinc-100",
+            "w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#F2A900]",
             className
           )}
           ref={ref}
           {...props}
         />
-        <span className="w-8 text-center text-sm font-medium text-zinc-300">
+        <span className="w-8 text-center text-base font-semibold text-[#F2A900]">
           {props.value || props.defaultValue || 0}
         </span>
       </div>
