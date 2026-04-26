@@ -36,6 +36,15 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
   const [recordId, setRecordId] = React.useState<string | undefined>(undefined);
+  
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
+  // Volver arriba en el scroll interno cuando cambia el paso
+  React.useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [currentStep]);
 
   const methods = useForm<DiagnosticFormData>({
     resolver: zodResolver(diagnosticSchema),
@@ -70,7 +79,6 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
         const next = currentStep + 1;
         setCurrentStep(next);
         if (onStepChange) onStepChange(next);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         alert(result.error || "Hubo un error al guardar el progreso.");
       }
@@ -82,7 +90,6 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
       const prev = currentStep - 1;
       setCurrentStep(prev);
       if (onStepChange) onStepChange(prev);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -129,7 +136,10 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
         </div>
 
         <Card className="overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-xl rounded-2xl">
-          <CardContent className="p-0 max-h-[55vh] md:max-h-[65vh] overflow-y-auto custom-scrollbar relative">
+          <CardContent 
+            ref={scrollRef}
+            className="p-0 max-h-[55vh] md:max-h-[65vh] overflow-y-auto custom-scrollbar relative"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}

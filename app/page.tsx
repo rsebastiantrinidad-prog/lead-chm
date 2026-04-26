@@ -65,12 +65,12 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="container mx-auto px-6 relative z-10 text-center mt-2 mb-8"
+        className="container mx-auto px-6 relative z-10 text-center mt-2 mb-8 md:mb-12"
       >
-        <div className="inline-block bg-white/5 border border-white/10 rounded-full px-6 py-2 shadow-lg backdrop-blur-sm">
-          <p className="text-white/90 text-sm md:text-base font-medium">
-            <span className="text-[#F2A900] font-bold mr-2 uppercase tracking-wide text-xs md:text-sm">Objetivo Principal:</span> 
-            Estandarizar y agilizar el proceso de <strong className="text-white">Diagnóstico 1:1</strong> en terreno.
+        <div className="inline-block bg-white/5 border border-white/10 rounded-full px-8 py-3 shadow-xl backdrop-blur-sm">
+          <p className="text-white/90 text-base md:text-lg font-medium tracking-wide">
+            <span className="text-[#F2A900] font-bold mr-3 uppercase tracking-wider text-sm md:text-base">Objetivo Estratégico:</span> 
+            Potenciar el desarrollo del liderazgo operativo mediante un <strong className="text-white font-bold">Diagnóstico 1:1</strong> estructurado y accionable.
           </p>
         </div>
       </motion.div>
