@@ -14,16 +14,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { OpeningStep } from "./steps/OpeningStep";
 import { PersonalLeadershipStep } from "./steps/PersonalLeadershipStep";
 import { OperationalManagementStep } from "./steps/OperationalManagementStep";
-import { TeamDiagnosticStep } from "./steps/TeamDiagnosticStep";
-import { ProblemSolvingStep } from "./steps/ProblemSolvingStep";
 import { ClosingStep } from "./steps/ClosingStep";
 
 const steps = [
   { id: "opening", title: "Apertura", component: OpeningStep },
   { id: "leadership", title: "Liderazgo Personal", component: PersonalLeadershipStep },
   { id: "management", title: "Gestión Operativa", component: OperationalManagementStep },
-  { id: "team", title: "Diagnóstico de Equipo", component: TeamDiagnosticStep },
-  { id: "problems", title: "Resolución de Problemas", component: ProblemSolvingStep },
   { id: "closing", title: "Cierre", component: ClosingStep },
 ];
 

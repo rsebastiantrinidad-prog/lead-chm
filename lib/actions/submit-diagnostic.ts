@@ -19,11 +19,28 @@ export async function submitDiagnosticPhase(data: Partial<DiagnosticFormData>, i
     // Validar parcialmente en el servidor
     const validatedData = diagnosticSchema.partial().parse(data);
     
+    // Separamos los datos base y el resto lo empaquetamos en respuestas_json
+    const {
+      nombre_apellido,
+      rol,
+      area,
+      jefe_inmediato,
+      ...respuestas
+    } = validatedData;
+
+    const payload = {
+      nombre_apellido,
+      rol,
+      area,
+      jefe_inmediato,
+      respuestas_json: respuestas
+    };
+
     if (id) {
       // Si ya hay un ID, actualizamos la fila existente
       const { error } = await supabase
         .from("diagnostico_1a1")
-        .update(validatedData)
+        .update(payload)
         .eq("id", id);
         
       if (error) {
@@ -36,7 +53,7 @@ export async function submitDiagnosticPhase(data: Partial<DiagnosticFormData>, i
       // Si no hay ID, insertamos y retornamos el nuevo ID generado
       const { data: insertedData, error } = await supabase
         .from("diagnostico_1a1")
-        .insert([validatedData])
+        .insert([payload])
         .select("id")
         .single();
         

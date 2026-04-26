@@ -8,27 +8,19 @@ import { motion, AnimatePresence } from "framer-motion";
 const STEP_INFO = [
   {
     title: "Apertura",
-    description: "Ingresa los datos generales del evaluado para comenzar. Esto nos permite contextualizar los resultados dentro de tu área operativa."
+    description: "Explicar el propósito y asegurar la neutralidad del proceso. No es una evaluación individual, sino un diagnóstico del sistema de trabajo para mejorar la coordinación."
   },
   {
     title: "Liderazgo Personal",
-    description: "Evaluación profunda de la autopercepción, capacidad de influencia y estrategias de desarrollo de las personas a tu cargo."
+    description: "Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia. (Modelo Maxwell)"
   },
   {
     title: "Gestión Operativa",
-    description: "Revisión táctica de prioridades, cuellos de botella y procesos bajo el enfoque del sistema EOS (Traction)."
-  },
-  {
-    title: "Diagnóstico de Equipo",
-    description: "Medición de la percepción general del equipo y puntuación clave de claridad, coordinación y comunicación cruzada."
-  },
-  {
-    title: "Resolución de Problemas",
-    description: "Análisis de la capacidad técnica y metodológica para anticipar y resolver incidencias repetitivas en campo."
+    description: "Sección enfocada en detectar falta de claridad, microgestión, improvisación y trabajo en silos. (Enfoque EOS)"
   },
   {
     title: "Cierre",
-    description: "Conclusiones finales, áreas de mejora prioritarias y expectativas clave para las próximas semanas."
+    description: "Conclusiones finales, áreas de mejora prioritarias y expectativas clave para liderar mejor el área."
   }
 ];
 

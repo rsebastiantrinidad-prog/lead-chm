@@ -9,95 +9,73 @@ export function PersonalLeadershipStep() {
   const { register } = useFormContext<DiagnosticFormData>();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <div>
-        <h2 className="text-2xl font-semibold mb-2">2. Diagnóstico de Liderazgo Personal</h2>
-        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-          Inspirado en Maxwell – Desarrollo del líder que está en usted. El objetivo es detectar el estilo de liderazgo y nivel de autoconciencia.
+        <h2 className="text-3xl font-bold mb-3 text-white">2. Diagnóstico de Liderazgo Personal</h2>
+        <p className="text-white/70 text-base leading-relaxed mb-8">
+          Basado en Maxwell. Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia.
         </p>
       </div>
 
-      <div className="space-y-8">
-        <section className="space-y-4">
-          <h3 className="text-lg font-medium text-zinc-200 border-b border-zinc-800 pb-2">
+      <div className="space-y-10">
+        <section className="space-y-6">
+          <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
             Autopercepción
           </h3>
           
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="autopercepcion_significado">¿Qué significa para vos ser un buen supervisor en esta operación?</Label>
-              <Textarea id="autopercepcion_significado" {...register("autopercepcion_significado")} />
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <Label htmlFor="q_liderazgo_funciona_bien">¿Qué parte de tu liderazgo sentís que hoy funciona bien?</Label>
+              <Textarea id="q_liderazgo_funciona_bien" {...register("q_liderazgo_funciona_bien")} placeholder="Ej. La comunicación diaria, la motivación..." />
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="autopercepcion_funciona">¿Qué parte de tu liderazgo sentís que hoy funciona bien?</Label>
-              <Textarea id="autopercepcion_funciona" {...register("autopercepcion_funciona")} />
+            <div className="space-y-3">
+              <Label htmlFor="q_liderazgo_mas_dificil">¿Qué parte te resulta más difícil?</Label>
+              <Textarea id="q_liderazgo_mas_dificil" {...register("q_liderazgo_mas_dificil")} placeholder="Ej. Dar feedback negativo, delegar..." />
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="autopercepcion_dificil">¿Qué parte te resulta más difícil?</Label>
-              <Textarea id="autopercepcion_dificil" {...register("autopercepcion_dificil")} />
+            <div className="space-y-3">
+              <Label htmlFor="q_liderazgo_espera_equipo">¿Qué crees que tu equipo espera de ti como líder?</Label>
+              <Textarea id="q_liderazgo_espera_equipo" {...register("q_liderazgo_espera_equipo")} />
             </div>
             
-            <div className="space-y-2">
-              <Label htmlFor="autopercepcion_espera">¿Qué crees que tu equipo espera de ti como líder?</Label>
-              <Textarea id="autopercepcion_espera" {...register("autopercepcion_espera")} />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="autopercepcion_fortalecer">¿Qué aspectos de liderazgo te gustaría fortalecer?</Label>
-              <Textarea id="autopercepcion_fortalecer" {...register("autopercepcion_fortalecer")} />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="autopercepcion_conversaciones">¿Qué tipo de conversaciones te resultan más difíciles?</Label>
-              <Textarea id="autopercepcion_conversaciones" {...register("autopercepcion_conversaciones")} />
+            <div className="space-y-3">
+              <Label htmlFor="q_liderazgo_fortalecer">¿Qué aspectos de liderazgo te gustaría fortalecer?</Label>
+              <Textarea id="q_liderazgo_fortalecer" {...register("q_liderazgo_fortalecer")} />
             </div>
           </div>
         </section>
 
-        <section className="space-y-4">
-          <h3 className="text-lg font-medium text-zinc-200 border-b border-zinc-800 pb-2">
+        <section className="space-y-6">
+          <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
             Contexto del Rol
           </h3>
           
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="contexto_objetivo">¿Cuál es el principal objetivo de tu rol dentro de tu empresa?</Label>
-              <Textarea id="contexto_objetivo" {...register("contexto_objetivo")} />
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <Label htmlFor="q_rol_objetivo">¿Cuál es el principal objetivo de tu rol dentro del CSM?</Label>
+              <Textarea id="q_rol_objetivo" {...register("q_rol_objetivo")} />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="contexto_indicadores">¿Qué indicadores definen si estás haciendo bien tu trabajo?</Label>
-              <Textarea id="contexto_indicadores" {...register("contexto_indicadores")} />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="contexto_decisiones">¿Qué decisiones tomas habitualmente?</Label>
-              <Textarea id="contexto_decisiones" {...register("contexto_decisiones")} />
+            <div className="space-y-3">
+              <Label htmlFor="q_rol_indicadores">¿Qué indicadores definen si estás haciendo bien tu trabajo?</Label>
+              <Textarea id="q_rol_indicadores" {...register("q_rol_indicadores")} placeholder="Ej. Cumplimiento de metas, retención..." />
             </div>
           </div>
         </section>
 
-        <section className="space-y-4">
-          <h3 className="text-lg font-medium text-zinc-200 border-b border-zinc-800 pb-2">
-            Influencia y Desarrollo
+        <section className="space-y-6">
+          <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
+            Influencia y Delegación
           </h3>
           
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="influencia_siguen">¿Tu equipo te sigue más por tu rol o por confianza personal?</Label>
-              <Textarea id="influencia_siguen" {...register("influencia_siguen")} />
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <Label htmlFor="q_delegacion_no_cumple">¿Qué haces cuando alguien del equipo no cumple?</Label>
+              <Textarea id="q_delegacion_no_cumple" {...register("q_delegacion_no_cumple")} />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="influencia_incumplimiento">¿Qué haces cuando alguien del equipo no cumple?</Label>
-              <Textarea id="influencia_incumplimiento" {...register("influencia_incumplimiento")} />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="desarrollo_gente">¿Cómo desarrollás a tu gente?</Label>
-              <Textarea id="desarrollo_gente" {...register("desarrollo_gente")} />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="desarrollo_delega">¿Delegás o terminás resolviendo vos?</Label>
-              <Textarea id="desarrollo_delega" {...register("desarrollo_delega")} />
+            <div className="space-y-3">
+              <Label htmlFor="q_delegacion_frecuencia">¿Con qué frecuencia terminás resolviendo tareas que podrías haber delegado?</Label>
+              <Textarea id="q_delegacion_frecuencia" {...register("q_delegacion_frecuencia")} placeholder="Ej. Muy seguido, casi nunca..." />
             </div>
           </div>
         </section>
