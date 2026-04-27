@@ -21,14 +21,14 @@ export function OpeningStep() {
         <h3 className="text-lg font-medium text-zinc-200 border-b border-zinc-800 pb-2">
           Información del Supervisor
         </h3>
-        
+
         <div className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="nombre_apellido">Nombre y Apellido *</Label>
-            <Input 
-              id="nombre_apellido" 
-              placeholder="Ej. Juan Pérez" 
-              {...register("nombre_apellido")} 
+            <Input
+              id="nombre_apellido"
+              placeholder="Ej. Juan Pérez"
+              {...register("nombre_apellido")}
             />
             {errors.nombre_apellido && (
               <p className="text-red-400 text-xs mt-1">{errors.nombre_apellido.message}</p>
@@ -38,10 +38,10 @@ export function OpeningStep() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="rol">Rol / Cargo *</Label>
-              <Input 
-                id="rol" 
-                placeholder="Ej. Supervisor de Planta" 
-                {...register("rol")} 
+              <Input
+                id="rol"
+                placeholder="Ej. Supervisor de Planta"
+                {...register("rol")}
               />
               {errors.rol && (
                 <p className="text-red-400 text-xs mt-1">{errors.rol.message}</p>
@@ -50,10 +50,10 @@ export function OpeningStep() {
 
             <div className="space-y-2">
               <Label htmlFor="area">Área *</Label>
-              <Input 
-                id="area" 
-                placeholder="Ej. Producción" 
-                {...register("area")} 
+              <Input
+                id="area"
+                placeholder="Ej. Producción"
+                {...register("area")}
               />
               {errors.area && (
                 <p className="text-red-400 text-xs mt-1">{errors.area.message}</p>
@@ -62,11 +62,11 @@ export function OpeningStep() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="jefe_inmediato">Nombre del Jefe Inmediato (Opcional)</Label>
-            <Input 
-              id="jefe_inmediato" 
-              placeholder="Ej. María Gómez" 
-              {...register("jefe_inmediato")} 
+            <Label htmlFor="jefe_inmediato">Nombre del Jefe Inmediato</Label>
+            <Input
+              id="jefe_inmediato"
+              placeholder="Ej. María Gómez"
+              {...register("jefe_inmediato")}
             />
           </div>
         </div>

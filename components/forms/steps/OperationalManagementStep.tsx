@@ -28,7 +28,7 @@ export function OperationalManagementStep() {
           <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
             Claridad y Prioridades
           </h3>
-          
+
           <div className="space-y-6">
             <div className="space-y-3">
               <Label htmlFor="q_eos_3_objetivos">¿Cuáles son hoy los 3 objetivos principales de tu área?</Label>
@@ -46,12 +46,12 @@ export function OperationalManagementStep() {
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="q_eos_problemas_frecuentes">¿Qué tipo de problemas aparecen con mayor frecuencia?</Label>
+              <Label htmlFor="q_eos_problemas_frecuentes">¿Qué tipo de problemas aparecen con mayor frecuencia en tu área?</Label>
               <Textarea id="q_eos_problemas_frecuentes" {...register("q_eos_problemas_frecuentes")} />
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="q_eos_problemas_constantes">¿Qué problemas se repiten constantemente en la operación?</Label>
+              <Label htmlFor="q_eos_problemas_constantes">¿Qué problemas se repiten constantemente en la gestión de tus tareas y objetivos?</Label>
               <Textarea id="q_eos_problemas_constantes" {...register("q_eos_problemas_constantes")} />
             </div>
           </div>

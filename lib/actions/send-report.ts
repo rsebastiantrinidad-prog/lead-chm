@@ -36,6 +36,14 @@ export async function generateAndSendReport(diagnosticData: any) {
       1. "scores": Un objeto con puntajes del 1 al 10 para: "Claridad", "Coordinacion", "Autonomia", "Procesos", "Problemas".
       2. "matrix": Un objeto con las etiquetas cualitativas (Baja/Media/Alta) para las mismas variables.
       3. "analysis": El informe ejecutivo de 5 párrafos (Introducción, Liderazgo, Gestión/Procesos, Riesgos, Conclusión).
+
+      TENER EN CUENTA
+      1. Ser concreto en el anáisis. 
+      2. Detalla en cada parrafo bullets point con hallazgos en base a sus respuestas.
+      2. Mantener un mensaje directo, claro y objetivo. 
+      3. Evitar generalizaciones y buscar patrones específicos en las respuestas.
+      4. Usar un lenguaje profesional y técnico, acorde a un informe ejecutivo.
+      5. Redaccion sintetica y concreta
       
       EJEMPLO DE RESPUESTA:
       {
@@ -125,7 +133,7 @@ export async function generateAndSendReport(diagnosticData: any) {
             </div>
 
             <!-- Matriz de Indicadores -->
-            <div style="margin-bottom: 40px;">
+            <div style="margin-bottom: 20px;">
               <h2 style="color: #00205B; font-size: 18px;">Matriz de Desempeño</h2>
               <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
                 ${Object.entries(dataIA.matrix).map(([key, val]) => `
@@ -134,6 +142,18 @@ export async function generateAndSendReport(diagnosticData: any) {
                   </div>
                 `).join('')}
               </div>
+            </div>
+
+            <!-- Referencias del Gráfico -->
+            <div style="margin-bottom: 40px; background: #f8f9fa; padding: 15px; border-radius: 8px; font-size: 13px; color: #555; line-height: 1.5; border: 1px solid #eee;">
+              <h3 style="color: #00205B; font-size: 14px; margin-top: 0; margin-bottom: 10px;">Referencias de Evaluación</h3>
+              <ul style="margin: 0; padding-left: 20px;">
+                <li><strong>Claridad:</strong> Nivel de comprensión de los objetivos estratégicos y el alcance del rol.</li>
+                <li><strong>Coordinación:</strong> Fluidez de comunicación, alineación y trabajo en equipo entre áreas.</li>
+                <li><strong>Autonomía:</strong> Capacidad de delegación efectiva y toma de decisiones de forma independiente.</li>
+                <li><strong>Procesos:</strong> Nivel de estructuración, documentación y estandarización de tareas críticas.</li>
+                <li><strong>Problemas:</strong> Eficacia en la detección, gestión y resolución de problemas (reactivo vs proactivo).</li>
+              </ul>
             </div>
 
             <!-- Análisis Narrativo -->
@@ -156,8 +176,8 @@ export async function generateAndSendReport(diagnosticData: any) {
 
           <!-- Footer -->
           <div style="background: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #999; border-top: 1px solid #eee;">
-            Este reporte ha sido generado automáticamente por el sistema de Inteligencia Artificial de LEAD.
-            <br/>CHM Minería © ${new Date().getFullYear()}
+            Este reporte ha sido generado por el sistema LEAD.
+            <br/>${new Date().getFullYear()}
           </div>
         </div>
       `,
