@@ -8,15 +8,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const STEP_INFO = [
   {
     title: "Apertura",
-    description: "Explicar el propósito y asegurar la neutralidad del proceso. No es una evaluación individual, sino un diagnóstico del sistema de trabajo para mejorar la coordinación."
+    description: "El propósito de este proceso es asegurar la neutralidad de la evaluacion. Es un diagnóstico del sistema de trabajo para mejorar la coordinación."
   },
   {
     title: "Liderazgo Personal",
-    description: "Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia. (Modelo Maxwell)"
+    description: "Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia."
   },
   {
     title: "Gestión Operativa",
-    description: "Sección enfocada en detectar falta de claridad, microgestión, improvisación y trabajo en silos. (Enfoque EOS)"
+    description: "Sección enfocada en detectar falta de claridad, microgestión, improvisación y trabajo en silos."
   },
   {
     title: "Cierre",
@@ -35,16 +35,16 @@ export default function Home() {
       </div>
 
       {/* Header Fijo */}
-      <motion.header 
+      <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full relative z-50 px-6 py-6 md:px-12 md:py-8"
       >
         <div className="relative w-56 h-16 md:w-[18rem] md:h-20">
-          <Image 
-            src="/logo-chm.png" 
-            alt="CHM Minería" 
+          <Image
+            src="/logo-chm.png"
+            alt="CHM Minería"
             fill
             style={{ objectFit: 'contain', objectPosition: 'left' }}
             priority
@@ -53,7 +53,7 @@ export default function Home() {
       </motion.header>
 
       {/* Objetivo Global */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function Home() {
       >
         <div className="inline-block bg-white/5 border border-white/10 rounded-full px-8 py-3 shadow-xl backdrop-blur-sm">
           <p className="text-white/90 text-base md:text-lg font-medium tracking-wide">
-            <span className="text-[#F2A900] font-bold mr-3 uppercase tracking-wider text-sm md:text-base">Objetivo Estratégico:</span> 
+            <span className="text-[#F2A900] font-bold mr-3 uppercase tracking-wider text-sm md:text-base">Objetivo Estratégico:</span>
             Potenciar el desarrollo del liderazgo operativo mediante un <strong className="text-white font-bold">Diagnóstico 1:1</strong> estructurado y accionable.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
       {/* Cuidado con items-center: items-start asegura que aparezca más arriba */}
       <div className="container mx-auto px-6 pb-20 relative z-10 flex-1 flex flex-col lg:flex-row items-start justify-center gap-16 lg:gap-24">
 
-        
+
         {/* Left Column: Text & Testimonials */}
         <div className="w-full lg:w-1/2 flex flex-col items-start text-left mt-0">
           <AnimatePresence mode="wait">
@@ -86,7 +86,7 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight mb-6 text-white drop-shadow-md leading-tight">
                 {STEP_INFO[activeStep]?.title || "Guía de Reunión 1:1"}
               </h1>
-              
+
               <p className="text-white/80 text-lg md:text-2xl max-w-xl font-medium leading-relaxed">
                 {STEP_INFO[activeStep]?.description || "Levantamiento de diagnóstico real del liderazgo operativo."}
               </p>
@@ -94,7 +94,7 @@ export default function Home() {
           </AnimatePresence>
 
           {/* Testimonial Scroller (Tarjetas desplazables) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -102,9 +102,9 @@ export default function Home() {
           >
             <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#00205B] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#00205B] to-transparent z-10 pointer-events-none" />
-            
-            <motion.div 
-              animate={{ x: ["0%", "-50%"] }} 
+
+            <motion.div
+              animate={{ x: ["0%", "-50%"] }}
               transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
               className="flex gap-6 whitespace-nowrap pl-6"
             >
@@ -158,7 +158,7 @@ export default function Home() {
             <DiagnosticWizard onStepChange={setActiveStep} />
           </div>
         </motion.div>
-        
+
       </div>
     </main>
   );

@@ -90,11 +90,21 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
   const onSubmit = async (data: DiagnosticFormData) => {
     setIsSubmitting(true);
     const result = await submitDiagnosticPhase(data, recordId);
-    setIsSubmitting(false);
 
     if (result.success) {
+      // Si la fase se guardó bien, disparamos el Módulo Agéntico (IA + Email)
+      // Importamos la acción de forma dinámica o normal. Usaremos normal.
+      const { generateAndSendReport } = await import("@/lib/actions/send-report");
+      
+      const fullData = {
+        ...data,
+        respuestas_json: data // En este punto data tiene todo el objeto validado
+      };
+
+      await generateAndSendReport(fullData);
       setIsSuccess(true);
     } else {
+      setIsSubmitting(false);
       alert(result.error || "Hubo un error al enviar el formulario.");
     }
   };

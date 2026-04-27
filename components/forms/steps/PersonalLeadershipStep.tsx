@@ -13,7 +13,7 @@ export function PersonalLeadershipStep() {
       <div>
         <h2 className="text-3xl font-bold mb-3 text-white">2. Diagnóstico de Liderazgo Personal</h2>
         <p className="text-white/70 text-base leading-relaxed mb-8">
-          Basado en Maxwell. Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia.
+          Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia.
         </p>
       </div>
 
@@ -22,7 +22,7 @@ export function PersonalLeadershipStep() {
           <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
             Autopercepción
           </h3>
-          
+
           <div className="space-y-6">
             <div className="space-y-3">
               <Label htmlFor="q_liderazgo_funciona_bien">¿Qué parte de tu liderazgo sentís que hoy funciona bien?</Label>
@@ -38,7 +38,7 @@ export function PersonalLeadershipStep() {
               <Label htmlFor="q_liderazgo_espera_equipo">¿Qué crees que tu equipo espera de ti como líder?</Label>
               <Textarea id="q_liderazgo_espera_equipo" {...register("q_liderazgo_espera_equipo")} />
             </div>
-            
+
             <div className="space-y-3">
               <Label htmlFor="q_liderazgo_fortalecer">¿Qué aspectos de liderazgo te gustaría fortalecer?</Label>
               <Textarea id="q_liderazgo_fortalecer" {...register("q_liderazgo_fortalecer")} />
@@ -50,10 +50,10 @@ export function PersonalLeadershipStep() {
           <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
             Contexto del Rol
           </h3>
-          
+
           <div className="space-y-6">
             <div className="space-y-3">
-              <Label htmlFor="q_rol_objetivo">¿Cuál es el principal objetivo de tu rol dentro del CSM?</Label>
+              <Label htmlFor="q_rol_objetivo">¿Cuál es el principal objetivo de tu rol?</Label>
               <Textarea id="q_rol_objetivo" {...register("q_rol_objetivo")} />
             </div>
             <div className="space-y-3">
@@ -67,7 +67,7 @@ export function PersonalLeadershipStep() {
           <h3 className="text-xl font-bold text-[#F2A900] border-b border-white/10 pb-3">
             Influencia y Delegación
           </h3>
-          
+
           <div className="space-y-6">
             <div className="space-y-3">
               <Label htmlFor="q_delegacion_no_cumple">¿Qué haces cuando alguien del equipo no cumple?</Label>
