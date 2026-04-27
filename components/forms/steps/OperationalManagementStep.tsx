@@ -18,7 +18,7 @@ export function OperationalManagementStep() {
       <div>
         <h2 className="text-3xl font-bold mb-3 text-white">3. Gestión Operativa (EOS)</h2>
         <p className="text-white/70 text-base leading-relaxed mb-8">
-          Sección enfocada en detectar falta de claridad, microgestión, improvisación y trabajo en silos.
+          Sección enfocada en detectar falta de claridad, microgestión, improvisación y trabajo en silos. <small className="text-white/50">Tómate tu tiempo, pero si no tienes una respuestas, coloca un -</small>
         </p>
       </div>
 
@@ -77,7 +77,7 @@ export function OperationalManagementStep() {
                 max={5}
                 step={1}
                 value={valCoordinacion}
-                onChange={(e) => setValue("likert_coordinacion_fluida", parseInt(e.target.value))}
+                onChange={(e) => setValue("likert_coordinacion_fluida", parseInt(e.target.value), { shouldValidate: true, shouldDirty: true })}
                 className="my-4"
               />
               <div className="flex justify-between text-xs text-white/50 px-1">
@@ -96,7 +96,7 @@ export function OperationalManagementStep() {
                 max={5}
                 step={1}
                 value={valFricciones}
-                onChange={(e) => setValue("likert_fricciones_areas", parseInt(e.target.value))}
+                onChange={(e) => setValue("likert_fricciones_areas", parseInt(e.target.value), { shouldValidate: true, shouldDirty: true })}
                 className="my-4"
               />
               <div className="flex justify-between text-xs text-white/50 px-1">
@@ -115,7 +115,7 @@ export function OperationalManagementStep() {
                 max={5}
                 step={1}
                 value={valDecisiones}
-                onChange={(e) => setValue("likert_decisiones_escalan", parseInt(e.target.value))}
+                onChange={(e) => setValue("likert_decisiones_escalan", parseInt(e.target.value), { shouldValidate: true, shouldDirty: true })}
                 className="my-4"
               />
               <div className="flex justify-between text-xs text-white/50 px-1">

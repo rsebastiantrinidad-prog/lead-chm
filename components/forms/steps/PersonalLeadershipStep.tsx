@@ -12,8 +12,8 @@ export function PersonalLeadershipStep() {
     <div className="space-y-10">
       <div>
         <h2 className="text-3xl font-bold mb-3 text-white">2. Diagnóstico de Liderazgo Personal</h2>
-        <p className="text-white/70 text-base leading-relaxed mb-8">
-          Esta sección evalúa la autopercepción, el contexto del rol y el nivel de influencia.
+        <p className="text-white/70 text-base leading-relaxed mb-2">
+          Esta sección refiere a tu autopercepción, el contexto de tu rol y tu nivel de influencia. <small className="text-white/50">Tómate tu tiempo, pero si no tienes una respuestas, coloca un -</small>
         </p>
       </div>
 

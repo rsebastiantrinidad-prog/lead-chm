@@ -13,7 +13,7 @@ export function ClosingStep() {
       <div>
         <h2 className="text-3xl font-bold mb-3 text-white">4. Cierre y Expectativas</h2>
         <p className="text-white/70 text-base leading-relaxed mb-8">
-          Preguntas clave de cierre para sintetizar el diagnóstico.
+          Finalizando Formulario. <small className="text-white/50">Tómate tu tiempo, pero si no tienes una respuestas, coloca un -</small>
         </p>
       </div>
 

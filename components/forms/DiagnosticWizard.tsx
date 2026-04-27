@@ -82,6 +82,13 @@ export function DiagnosticWizard({ onStepChange }: DiagnosticWizardProps) {
         "q_delegacion_no_cumple", "q_delegacion_frecuencia"
       ];
     } else if (currentStep === 2) {
+      // Pre-registrar los valores Likert para que trigger() los reconozca
+      // aunque el usuario no haya movido el slider (defaultValues no se marcan como dirty)
+      const currentValues = methods.getValues();
+      methods.setValue("likert_coordinacion_fluida", currentValues.likert_coordinacion_fluida ?? 3, { shouldDirty: true });
+      methods.setValue("likert_fricciones_areas", currentValues.likert_fricciones_areas ?? 3, { shouldDirty: true });
+      methods.setValue("likert_decisiones_escalan", currentValues.likert_decisiones_escalan ?? 3, { shouldDirty: true });
+
       fieldsToValidate = [
         "q_eos_3_objetivos", "q_eos_claridad_roles", "q_eos_prioridades_urgentes",
         "q_eos_problemas_frecuentes", "q_eos_problemas_constantes",

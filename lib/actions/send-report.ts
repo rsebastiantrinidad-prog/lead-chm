@@ -36,14 +36,6 @@ export async function generateAndSendReport(diagnosticData: any) {
       1. "scores": Un objeto con puntajes del 1 al 10 para: "Claridad", "Coordinacion", "Autonomia", "Procesos", "Problemas".
       2. "matrix": Un objeto con las etiquetas cualitativas (Baja/Media/Alta) para las mismas variables.
       3. "analysis": El informe ejecutivo de 5 párrafos (Introducción, Liderazgo, Gestión/Procesos, Riesgos, Conclusión).
-
-      TENER EN CUENTA
-      1. Ser concreto en el anáisis. 
-      2. Detalla en cada parrafo bullets point con hallazgos en base a sus respuestas.
-      2. Mantener un mensaje directo, claro y objetivo. 
-      3. Evitar generalizaciones y buscar patrones específicos en las respuestas.
-      4. Usar un lenguaje profesional y técnico, acorde a un informe ejecutivo.
-      5. Redaccion sintetica y concreta
       
       EJEMPLO DE RESPUESTA:
       {
